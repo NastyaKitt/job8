@@ -1,0 +1,269 @@
+html {
+    font-family: "Montserrat Alternates", serif;
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,p {
+    margin: 0;
+    padding: 0;
+}
+button,input {
+    font-family: "Montserrat Alternates", serif;
+    cursor: pointer;
+
+}
+/* отступ */
+header,.heroSection,.whyUs,.reviews,.me,footer {
+    width: calc(100% - 24rem);
+    padding: 0 12rem;
+}
+/* header */
+header {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F9E8E8;
+    padding-top: 2rem;
+    align-items: center;
+    & h2 {
+        font-weight: 600 ;
+    }
+}
+/* heroSection */
+.heroSection {
+    height: 50rem;
+    background-color: #F9E8E8;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-around;
+    & .text {
+        & h1 {
+            font-size: 4rem;
+            font-weight: 500;         
+        }
+        & h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+    }
+    & .but {
+        & .butt0, .butt1 {
+            display: none;
+            &.showButt {
+                display: block;
+                left: auto;
+            }
+        }
+        & .butt0 {
+            & button {
+                width: 30rem;
+                height: 5rem;
+                background-color: #C7EB51;
+                border: 1px solid;
+                font-size: 1.5rem;
+                &:hover{
+                    background-color: #aeda21;
+                }
+                &:active{
+                    background-color: #dcff68;
+                }
+            }
+        }
+        & .butt1 {
+            & input {
+                width: 30rem;
+                height: 5rem;
+                padding: 0;
+                background-color: #C7EB51;
+                border: 1px solid;
+                font-size: 1.5rem;
+                &.ok:hover{
+                    background-color: #aeda21;
+                }
+                &.ok:active{
+                    background-color: #dcff68;
+                }
+                &.tell{
+                    width: 29rem;
+                    background-color: #fff;
+                    position: absolute;
+                    left: 12rem;
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+}
+/* whyUs */
+.whyUs {
+    text-align: center;
+    margin-top: 1rem;
+    & h1 {
+        margin-bottom: 1rem;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+    & h2 {
+        margin-bottom: 2rem;
+        font-weight: 400;
+        text-align: left;
+    }
+}
+/* reviews */
+.reviews {
+    background-color: #F9E8E8;
+    display: grid;
+    justify-items: center;
+    & h1 {
+        text-align: center;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+    & .reviewSlider {
+        width: 100%;
+        & .reviewList {
+            height: 17rem;
+            width: 100%;
+            display: flex;
+            & img {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                margin-right: 1rem;
+            }
+            & .reviewItem {
+                width: calc(30rem - 4rem);
+                height: calc(15rem - 2rem);
+                padding: 1rem 2rem;
+                background-color: #fff;
+                margin-right: 1rem;
+                & .textReview {
+                    height: 12rem;
+                    max-width: 25rem ;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    & button {
+        text-align: center;
+        margin: 2rem 0;
+        width: 30rem;
+        height: 5rem;
+        background-color: #C7EB51;
+        border: 1px solid;
+        font-size: 1.5rem;
+        &:hover {
+            background-color: #aeda21;
+        }
+        &:active {
+            background-color: #dcff68;
+        }
+    }
+}
+.reviewItem:not(.active) {
+    display: none;
+}
+/* -me */
+.me {
+    height: 40rem;
+    text-align: center;
+    & h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        margin: 2rem 0;
+    }
+    & .meInfo {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        & img{
+            width: 30%;
+            border-radius: 1rem;
+        }
+        & span {
+            margin-left: 1rem;
+            & p {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+/* footer */
+footer {
+    background-color: #F9E8E8;
+    & .text {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 2rem 0;
+    }
+    & .config {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        & button {
+            background-color: transparent;
+            border: none;
+            font-size: 1rem;
+        }
+    }
+}
+/*  */
+.politics {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #00000080;
+    z-index: 999;
+    display: none;
+    justify-items: center;
+    align-items: center;
+    &.showP {
+        display: grid;
+    }
+    & button {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background-color: transparent;
+        border: none;
+    }
+    & button:hover {
+        transform: rotate(90deg);
+        transition: all 1s;
+        & path {
+            stroke:#F9E8E8 ;
+            transition: all 1s;
+        }
+    }
+    & button:active {
+        transform: rotate(180deg);
+        transition: all 0.1s;
+        & path {
+            stroke:#ffebeb ;
+            transition: all 0.1s;
+        }
+    }
+    & svg {
+        & path {
+            stroke: #fff;
+        }
+    }
+    & .politicWin {
+        width: calc(100% - 30rem);
+        height: calc(100% - 10rem);
+        background-color: #fff;
+        padding: 2rem;
+        overflow-y: scroll;
+    }
+}
